@@ -1,0 +1,14 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2430
+
+A color scheme with good contrast, yet easy on the eyes.
+Looks the same in the GUI as it does on a 16 color terminal.
+Uses the Tango color palette (http://tango.freedesktop.org).
+
+http://img134.imageshack.us/img134/9471/literaltango.png
+
+Terminal users:
+Intended for display on a black (#000000) background with a text color
+of #d3d7cf. Also make sure your terminal is using the Tango color 
+palette. GNOME Terminal uses it by default. Linux console users, see
+http://search.cpan.org/perldoc?conpalette
+Also make sure that background=dark in vim.
