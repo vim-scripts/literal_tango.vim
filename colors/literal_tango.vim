@@ -1,16 +1,17 @@
 " Vim color file
 " Filename: literal_tango.vim
 " Maintainer: Hinrik Örn Sigurðsson <hinrik.sig at gmail dot com>
-" Version: 1.2
+" Version: 1.3
 " Last Change: Nov 9th 2008
 " URLs: http://git.nix.is/?p=hinrik/dotfiles;a=blob_plain;f=.vim/colors/literal_tango.vim;hb=HEAD
 "       http://www.vim.org/scripts/script.php?script_id=2430
 " Installation: Drop this file in your $VIMRUNTIME/colors/ directory
+" Screenshot: http://img147.imageshack.us/img147/3328/literaltangogx5.png
 " License: GNU General Public License version 3 or (at your option) any
 "          later version as published by the Free Software Foundation
 "
 " A color scheme with good contrast, yet easy on the eyes.
-" Looks the same in the GUI as it does on a color terminal.
+" Looks the same in the GUI as it does on a 16 color terminal.
 " Uses the Tango color palette (http://tango.freedesktop.org).
 "
 " Terminal users:
@@ -19,6 +20,10 @@
 " default. Linux console users, see http://search.cpan.org/perldoc?conpalette
 "
 " Changelog:
+"
+" 1.3:
+"   Made 'WildMenu' look consistent in GUI/terminal
+"   Made 'Title', 'Directory', and 'SpecialKey' look more readable
 "
 " 1.2:
 "   Use darker colors for diffs, popup menus, vertical splits,
@@ -62,6 +67,9 @@ hi DiffAdd      ctermbg=2 cterm=bold
 hi DiffChange   ctermbg=0
 hi DiffDelete   ctermfg=NONE ctermbg=0
 hi DiffText     ctermbg=0
+hi Title        ctermfg=3 cterm=NONE
+hi SpecialKey   ctermfg=6
+hi Directory    ctermfg=6
 
 " Tango palette
 let s:black        = "#2e3436"
@@ -93,9 +101,9 @@ exe "hi Constant     guifg=".s:darkred
 exe "hi Statement    guifg=".s:brown        ." gui=NONE"
 exe "hi PreProc      guifg=".s:darkmagenta
 exe "hi Comment      guifg=".s:darkblue
-exe "hi SpecialKey   guifg=".s:darkblue
+exe "hi SpecialKey   guifg=".s:darkcyan
 exe "hi NonText      guifg=".s:lightblue
-exe "hi Directory    guifg=".s:darkblue
+exe "hi Directory    guifg=".s:darkcyan
 exe "hi ErrorMsg     guifg=".s:white        ." gui=bold guibg=".s:darkred
 exe "hi Search       guifg=".s:black        ." guibg=".s:brown
 exe "hi MoreMsg      guifg=".s:darkgreen    ." gui=NONE"
@@ -103,10 +111,10 @@ exe "hi Question     guifg=".s:darkgreen    ." gui=NONE"
 exe "hi StatusLine   guifg=".s:lightgrey    ." gui=bold guibg=".s:black
 exe "hi StatusLineNC guifg=".s:lightgrey    ." gui=NONE guibg=".s:black
 exe "hi VertSplit    guifg=NONE gui=NONE guibg=".s:black
-exe "hi Title        guifg=".s:darkmagenta  ." gui=NONE"
+exe "hi Title        gui=NONE guifg=".s:brown
 exe "hi Visual       guibg=NONE gui=reverse"
 exe "hi WarningMsg   guifg=".s:darkred
-exe "hi WildMenu     guibg=".s:brown
+exe "hi WildMenu     guifg=".s:black          ." guibg=".s:brown
 exe "hi DiffAdd      gui=bold guibg=".s:darkgreen
 exe "hi DiffChange   guibg=".s:black
 exe "hi DiffDelete   gui=NONE guifg=NONE guibg=".s:black
