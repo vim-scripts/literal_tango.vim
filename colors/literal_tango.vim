@@ -1,7 +1,7 @@
 " Vim color file
 " Filename: literal_tango.vim
 " Maintainer: Hinrik Örn Sigurðsson <hinrik.sig at gmail dot com>
-" Version: 1.3
+" Version: 1.4
 " Last Change: Nov 9th 2008
 " URLs: http://git.nix.is/?p=hinrik/dotfiles;a=blob_plain;f=.vim/colors/literal_tango.vim;hb=HEAD
 "       http://www.vim.org/scripts/script.php?script_id=2430
@@ -20,6 +20,9 @@
 " default. Linux console users, see http://search.cpan.org/perldoc?conpalette
 "
 " Changelog:
+"
+" 1.4
+"   Now looks right on a linux console regardless of 'background' setting
 "
 " 1.3:
 "   Made 'WildMenu' look consistent in GUI/terminal
@@ -46,7 +49,7 @@ endif
 
 let g:colors_name = "literal_tango"
 
-" Color terminal
+" 16 color terminal
 hi Constant     ctermfg=1
 hi Folded       ctermfg=2 ctermbg=NONE
 hi FoldColumn   ctermfg=2 ctermbg=NONE
@@ -70,6 +73,16 @@ hi DiffText     ctermbg=0
 hi Title        ctermfg=3 cterm=NONE
 hi SpecialKey   ctermfg=6
 hi Directory    ctermfg=6
+hi MoreMsg      cterm=NONE
+hi Question     cterm=NONE
+hi WarningMsg   cterm=NONE
+hi TabLine      ctermfg=0 ctermbg=7 cterm=NONE
+hi CursorColumn ctermbg=7
+hi Comment      ctermfg=4 cterm=NONE
+hi Special      ctermfg=5 cterm=NONE
+hi Statement    cterm=NONE
+hi PreProc      ctermfg=5 cterm=NONE
+hi Underlined   ctermfg=4 cterm=bold,underline
 
 " Tango palette
 let s:black        = "#2e3436"
@@ -128,12 +141,12 @@ exe "hi Pmenu        guibg=".s:black
 exe "hi PmenuSel     guifg=".s:black        ." guibg=".s:lightgrey
 exe "hi PmenuSbar    guibg=".s:lightgrey
 exe "hi PmenuThumb   guifg=".s:darkgrey
-exe "hi TabLine      guifg=".s:darkgrey     ." guibg=".s:lightgrey
+exe "hi TabLine      gui=NONE guifg=".s:darkgrey     ." guibg=".s:lightgrey
 exe "hi CursorColumn guibg=".s:white
 exe "hi CursorLine   guibg=NONE gui=underline"
 exe "hi MatchParen   guibg=".s:darkgrey
 exe "hi Special      guifg=".s:darkmagenta
-exe "hi Underlined   guifg=".s:darkmagenta
+exe "hi Underlined   guifg=".s:lightblue
 exe "hi Error        guifg=".s:white        ." guibg=".s:darkred
 exe "hi Todo         guifg=".s:black        ." guibg=".s:brown
 
