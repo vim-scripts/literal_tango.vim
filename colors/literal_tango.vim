@@ -1,7 +1,7 @@
 " Vim color file
 " Filename: literal_tango.vim
 " Maintainer: Hinrik Örn Sigurðsson <hinrik.sig at gmail dot com>
-" Version: 1.1
+" Version: 1.2
 " Last Change: Nov 9th 2008
 " URLs: http://git.nix.is/?p=hinrik/dotfiles;a=blob_plain;f=.vim/colors/literal_tango.vim;hb=HEAD
 "       http://www.vim.org/scripts/script.php?script_id=2430
@@ -20,6 +20,10 @@
 "
 " Changelog:
 "
+" 1.2:
+"   Use darker colors for diffs, popup menus, vertical splits,
+"   matched parens, fold columns, and the status line.
+"
 " 1.1:
 "   Gave 'Type' a color
 "   Linked 'Repeat' and 'Conditional' to 'Statement' again
@@ -37,14 +41,27 @@ endif
 
 let g:colors_name = "literal_tango"
 
-" Terminal
-hi Constant    ctermfg=darkred
-hi Folded      ctermfg=darkgreen ctermbg=NONE
-hi Identifier  ctermfg=darkgreen
-hi Ignore      ctermfg=black
-hi Label       ctermfg=NONE
-hi LineNr      ctermfg=darkgrey
-hi Type        ctermfg=darkcyan
+" Color terminal
+hi Constant     ctermfg=1
+hi Folded       ctermfg=2 ctermbg=NONE
+hi FoldColumn   ctermfg=2 ctermbg=NONE
+hi Identifier   ctermfg=2
+hi Ignore       ctermfg=0
+hi Label        ctermfg=NONE
+hi LineNr       ctermfg=0 cterm=bold
+hi Type         ctermfg=6
+hi StatusLine   ctermbg=0 cterm=bold
+hi StatusLineNC ctermbg=0 cterm=NONE
+hi VertSplit    ctermbg=0 cterm=NONE
+hi SignColumn   ctermfg=3 ctermbg=NONE
+hi MatchParen   ctermbg=0 cterm=bold
+hi Pmenu        ctermbg=0
+hi PmenuSel     ctermfg=0 ctermbg=7
+hi PmenuThumb   ctermfg=0
+hi DiffAdd      ctermbg=2 cterm=bold
+hi DiffChange   ctermbg=0
+hi DiffDelete   ctermfg=NONE ctermbg=0
+hi DiffText     ctermbg=0
 
 " Tango palette
 let s:black        = "#2e3436"
@@ -67,6 +84,7 @@ let s:white        = "#eeeeec"
 " GUI
 exe "hi Normal       guifg=".s:lightgrey    ." guibg=#000000"
 exe "hi Folded       guifg=".s:darkgreen    ." guibg=NONE"
+exe "hi FoldColumn   guifg=".s:darkgreen    ." guibg=NONE"
 exe "hi LineNr       guifg=".s:darkgrey
 exe "hi Type         guifg=".s:darkcyan     ." gui=NONE"
 exe "hi Label        guifg=NONE"
@@ -82,27 +100,30 @@ exe "hi ErrorMsg     guifg=".s:white        ." gui=bold guibg=".s:darkred
 exe "hi Search       guifg=".s:black        ." guibg=".s:brown
 exe "hi MoreMsg      guifg=".s:darkgreen    ." gui=NONE"
 exe "hi Question     guifg=".s:darkgreen    ." gui=NONE"
+exe "hi StatusLine   guifg=".s:lightgrey    ." gui=bold guibg=".s:black
+exe "hi StatusLineNC guifg=".s:lightgrey    ." gui=NONE guibg=".s:black
+exe "hi VertSplit    guifg=NONE gui=NONE guibg=".s:black
 exe "hi Title        guifg=".s:darkmagenta  ." gui=NONE"
 exe "hi Visual       guibg=NONE gui=reverse"
 exe "hi WarningMsg   guifg=".s:darkred
 exe "hi WildMenu     guibg=".s:brown
-exe "hi FoldColumn   guifg=".s:darkblue     ." guibg=".s:lightgrey
-exe "hi DiffAdd      guibg=".s:darkblue
-exe "hi DiffChange   guibg=".s:darkmagenta
-exe "hi DiffDelete   guifg=".s:darkblue     ." guibg=".s:darkcyan
-exe "hi DiffText     guibg=".s:darkred
-exe "hi SignColumn   guibg=".s:darkblue     ." guibg=".s:lightgrey
+exe "hi DiffAdd      gui=bold guibg=".s:darkgreen
+exe "hi DiffChange   guibg=".s:black
+exe "hi DiffDelete   gui=NONE guifg=NONE guibg=".s:black
+exe "hi DiffText     guibg=".s:black
+exe "hi SignColumn   guibg=NONE guifg=".s:brown
 exe "hi SpellBad     guisp=".s:darkred
 exe "hi SpellCap     guisp=".s:darkblue
 exe "hi SpellRare    guisp=".s:darkmagenta
 exe "hi SpellLocal   guisp=".s:darkcyan
-exe "hi Pmenu        guibg=".s:darkmagenta
-exe "hi PmenuSel     guibg=".s:lightgrey
+exe "hi Pmenu        guibg=".s:black
+exe "hi PmenuSel     guifg=".s:black        ." guibg=".s:lightgrey
 exe "hi PmenuSbar    guibg=".s:lightgrey
+exe "hi PmenuThumb   guifg=".s:darkgrey
 exe "hi TabLine      guifg=".s:darkgrey     ." guibg=".s:lightgrey
 exe "hi CursorColumn guibg=".s:white
 exe "hi CursorLine   guibg=NONE gui=underline"
-exe "hi MatchParen   guibg=".s:darkcyan
+exe "hi MatchParen   guibg=".s:darkgrey
 exe "hi Special      guifg=".s:darkmagenta
 exe "hi Underlined   guifg=".s:darkmagenta
 exe "hi Error        guifg=".s:white        ." guibg=".s:darkred
