@@ -1,12 +1,12 @@
 " Vim color file
 " Filename: literal_tango.vim
 " Maintainer: Hinrik Örn Sigurðsson <hinrik.sig at gmail dot com>
-" Version: 1.4
-" Last Change: Nov 9th 2008
+" Version: 1.5
+" Last Change: Nov 10th 2008
 " URLs: http://git.nix.is/?p=hinrik/dotfiles;a=blob_plain;f=.vim/colors/literal_tango.vim;hb=HEAD
 "       http://www.vim.org/scripts/script.php?script_id=2430
 " Installation: Drop this file in your $VIMRUNTIME/colors/ directory
-" Screenshot: http://img147.imageshack.us/img147/3328/literaltangogx5.png
+" Screenshot: http://img362.imageshack.us/img362/1936/literaltangouv7.png
 " License: GNU General Public License version 3 or (at your option) any
 "          later version as published by the Free Software Foundation
 "
@@ -21,6 +21,9 @@
 "
 " Changelog:
 "
+" 1.5
+"   Use a brighter color for 'Special' to make it more distinct
+"
 " 1.4
 "   Now looks right on a linux console regardless of 'background' setting
 "
@@ -30,7 +33,7 @@
 "
 " 1.2:
 "   Use darker colors for diffs, popup menus, vertical splits,
-"   matched parens, fold columns, and the status line.
+"   matched parens, fold columns, and the status line
 "
 " 1.1:
 "   Gave 'Type' a color
@@ -79,7 +82,7 @@ hi WarningMsg   cterm=NONE
 hi TabLine      ctermfg=0 ctermbg=7 cterm=NONE
 hi CursorColumn ctermbg=7
 hi Comment      ctermfg=4 cterm=NONE
-hi Special      ctermfg=5 cterm=NONE
+hi Special      ctermfg=6 cterm=NONE
 hi Statement    cterm=NONE
 hi PreProc      ctermfg=5 cterm=NONE
 hi Underlined   ctermfg=4 cterm=bold,underline
@@ -145,7 +148,7 @@ exe "hi TabLine      gui=NONE guifg=".s:darkgrey     ." guibg=".s:lightgrey
 exe "hi CursorColumn guibg=".s:white
 exe "hi CursorLine   guibg=NONE gui=underline"
 exe "hi MatchParen   guibg=".s:darkgrey
-exe "hi Special      guifg=".s:darkmagenta
+exe "hi Special      guifg=".s:darkcyan
 exe "hi Underlined   guifg=".s:lightblue
 exe "hi Error        guifg=".s:white        ." guibg=".s:darkred
 exe "hi Todo         guifg=".s:black        ." guibg=".s:brown
